@@ -1,7 +1,12 @@
-export default function Footer() {
+import { cacheLife } from 'next/cache';
+
+export default async function Footer() {
+    'use cache';
+    cacheLife('days');
+
     return (
         <footer className="bg-gray-800 text-white py-4 mt-12">
-            <div className="container mx-auto text-center">
+            <div className="max-w-4xl mx-auto px-4 text-center">
                 <p>Copyright &copy; {new Date().getFullYear()} | Daniel Rasmuson | All rights reserved</p>
             </div>
         </footer>
